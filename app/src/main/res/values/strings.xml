@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AndroidSteganography</string>
+    <string name="encode">Encode</string>
+    <string name="decode">Decode</string>
+    <string name="choose_image">Choose Image</string>
+    <string name="secret_key">Secret Key -</string>
+    <string name="message">Message -</string>
+    <string name="your_message">Your message</string>
+    <string name="enter_secret_key">Enter secret key</string>
+    <string name="save_image">Save Image</string>
+    <string name="enter_message">Enter message</string>
+</resources>
