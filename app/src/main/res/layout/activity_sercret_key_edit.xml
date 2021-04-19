@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_margin="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <TextView
+        android:id="@+id/mode_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/edit_key"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/key_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:text="@string/key_name"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/sercret_key_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/key_name_edit"
+        android:layout_marginTop="35dp"
+        android:text="@string/secret_key"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+
+    <EditText
+        android:id="@+id/key_name_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/secret_key_edit"
+        android:layout_alignTop="@+id/key_name_text"
+        android:ems="10"
+        android:hint="@string/key_name"
+        android:inputType="textPersonName"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/secret_key_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sercret_key_text"
+        android:layout_alignBottom="@+id/sercret_key_text"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="70dp"
+        android:ems="10"
+        android:hint="@string/enter_secret_key"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/random_secret_key_button"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sercret_key_text"
+        android:layout_alignBottom="@+id/sercret_key_text"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:drawableLeft="@drawable/ic_random_key"
+        android:drawableTint="@color/white"
+        />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/secret_key_edit"
+        android:layout_centerHorizontal="true">
+        <Button
+            android:id="@+id/delete_secret_key_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/delete"
+            android:layout_marginTop="44sp"
+
+            />
+        <Button
+            android:id="@+id/save_secret_key_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/delete_secret_key_button"
+            android:layout_alignBaseline="@id/delete_secret_key_button"
+            android:text="@string/save"
+            android:layout_marginStart="40sp"
+            />
+        <Button
+            android:id="@+id/share_button"
+            android:drawableLeft="@drawable/ic_share_key"
+            android:layout_width="58dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/save_secret_key_button"
+            android:layout_marginStart="40sp"
+            android:layout_toEndOf="@id/save_secret_key_button"
+            android:drawableTint="@color/white" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

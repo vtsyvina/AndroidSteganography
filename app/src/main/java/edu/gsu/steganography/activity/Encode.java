@@ -1,4 +1,4 @@
-package edu.gsu.steganography;
+package edu.gsu.steganography.activity;
 
 import android.Manifest;
 import android.app.ProgressDialog;
@@ -34,11 +34,12 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.gsu.steganography.Utils.Utils;
+import edu.gsu.steganography.R;
+import edu.gsu.steganography.utils.Utils;
 import edu.gsu.steganography.model.SecretKey;
 import edu.gsu.steganography.model.SecretKeyArrayAdapter;
 import edu.gsu.steganography.service.SecretKeyService;
-import edu.gsu.steganography.service.impl.InMemorySecretKeyService;
+import edu.gsu.steganography.service.ServiceFactory;
 
 public class Encode extends AppCompatActivity implements TextEncodingCallback {
 
@@ -60,7 +61,7 @@ public class Encode extends AppCompatActivity implements TextEncodingCallback {
 
     private boolean imageEncoded;
 
-    private final SecretKeyService keyService = new InMemorySecretKeyService();
+    private final SecretKeyService keyService = ServiceFactory.getSecretKeyService();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +75,7 @@ public class Encode extends AppCompatActivity implements TextEncodingCallback {
         imageView = findViewById(R.id.imageview);
 
         message = findViewById(R.id.message);
-        secret_key = findViewById(R.id.secret_key);
+        secret_key = findViewById(R.id.secret_key_edit);
 
         Button choose_image_button = findViewById(R.id.choose_image_button);
         Button encode_button = findViewById(R.id.encode_button);
@@ -194,8 +195,9 @@ public class Encode extends AppCompatActivity implements TextEncodingCallback {
 
     private void saveToInternalStorage(Bitmap bitmapImage) {
         OutputStream fOut;
+        EditText filenameEdit = findViewById(R.id.filename_edit);
         File file = new File(Environment.getExternalStoragePublicDirectory(
-                Environment.DIRECTORY_DOWNLOADS), "Encoded.png"); // the File to save ,
+                Environment.DIRECTORY_DOWNLOADS), filenameEdit.getText().toString()+ ".png"); // the File to save ,
         try {
             fOut = new FileOutputStream(file);
             bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fOut); // saving the Bitmap to a file
@@ -208,7 +210,7 @@ public class Encode extends AppCompatActivity implements TextEncodingCallback {
                 }
             });
         } catch (IOException e) {
-            Toast.makeText(this, "There was an error while saving the image", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "There was an error while saving the image", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
     }

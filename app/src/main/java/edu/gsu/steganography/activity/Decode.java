@@ -1,4 +1,4 @@
-package edu.gsu.steganography;
+package edu.gsu.steganography.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -23,11 +23,12 @@ import com.ayush.imagesteganographylibrary.Text.TextDecoding;
 
 import java.io.IOException;
 
-import edu.gsu.steganography.Utils.Utils;
+import edu.gsu.steganography.R;
+import edu.gsu.steganography.utils.Utils;
 import edu.gsu.steganography.model.SecretKey;
 import edu.gsu.steganography.model.SecretKeyArrayAdapter;
 import edu.gsu.steganography.service.SecretKeyService;
-import edu.gsu.steganography.service.impl.InMemorySecretKeyService;
+import edu.gsu.steganography.service.ServiceFactory;
 
 public class Decode extends AppCompatActivity implements TextDecodingCallback {
 
@@ -42,7 +43,7 @@ public class Decode extends AppCompatActivity implements TextDecodingCallback {
     //Bitmap
     private Bitmap original_image;
 
-    private final SecretKeyService keyService = new InMemorySecretKeyService();
+    private final SecretKeyService keyService = ServiceFactory.getSecretKeyService();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +56,7 @@ public class Decode extends AppCompatActivity implements TextDecodingCallback {
         imageView = findViewById(R.id.imageview);
 
         message = findViewById(R.id.message);
-        secret_key = findViewById(R.id.secret_key);
+        secret_key = findViewById(R.id.secret_key_edit);
 
         Button choose_image_button = findViewById(R.id.choose_image_button);
         Button decode_button = findViewById(R.id.decode_button);
@@ -64,12 +65,7 @@ public class Decode extends AppCompatActivity implements TextDecodingCallback {
         ListView keysListView = findViewById(R.id.key_list_view);
 
         //Choose Image Button
-        choose_image_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ImageChooser();
-            }
-        });
+        choose_image_button.setOnClickListener(view -> ImageChooser());
 
         //Decode Button
         decode_button.setOnClickListener(new View.OnClickListener() {

@@ -34,7 +34,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/sercret_key_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textView"
@@ -53,7 +53,7 @@
         android:id="@+id/message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/secret_key"
+        android:layout_alignStart="@+id/secret_key_edit"
         android:layout_alignTop="@+id/textView"
         android:ems="10"
         android:hint="@string/enter_message"
@@ -61,11 +61,11 @@
         android:textSize="14sp" />
 
     <EditText
-        android:id="@+id/secret_key"
+        android:id="@+id/secret_key_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignBaseline="@+id/sercret_key_text"
+        android:layout_alignBottom="@+id/sercret_key_text"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="70dp"
         android:ems="10"
@@ -73,14 +73,42 @@
         android:inputType="textPassword"
         android:textSize="14sp" />
 
+    <TextView
+        android:id="@+id/filename_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/sercret_key_text"
+        android:layout_marginTop="35dp"
+        android:text="@string/filename_text"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/filename_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/filename_text"
+        android:layout_alignBottom="@+id/filename_text"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="70dp"
+        android:ems="10"
+        android:hint="@string/filename"
+        android:text="Encoded"
+        android:textSize="14sp" />
+
     <Button
         android:id="@+id/choose_secret_key_button"
         android:layout_width="58dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignBaseline="@+id/sercret_key_text"
+        android:layout_alignBottom="@+id/sercret_key_text"
         android:layout_alignParentEnd="true"
         android:drawableLeft="@drawable/ic_open_key_list"
+        android:drawableTint="@color/white"
         />
 
     <ListView
@@ -97,7 +125,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="17dp"
-        android:layout_toStartOf="@+id/secret_key"
+        android:layout_toStartOf="@+id/secret_key_edit"
         android:text="@string/encode"
         android:textAlignment="center"
         android:textSize="14dp" />
@@ -108,7 +136,7 @@
         android:id="@+id/save_image_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/secret_key"
+        android:layout_alignEnd="@+id/secret_key_edit"
         android:layout_alignTop="@+id/encode_button"
         android:layout_marginEnd="36dp"
         android:text="@string/save_image" />

@@ -34,7 +34,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/sercret_key_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/message"
@@ -48,7 +48,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/secret_key"
+        android:id="@+id/secret_key_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView"
@@ -68,6 +68,7 @@
         android:layout_alignBottom="@+id/textView"
         android:layout_alignParentEnd="true"
         android:drawableLeft="@drawable/ic_open_key_list"
+        android:drawableTint="@color/white"
          />
 
     <ListView
@@ -83,7 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/decode_button"
-        android:layout_alignStart="@+id/secret_key"
+        android:layout_alignStart="@+id/secret_key_edit"
         android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="@string/your_message"

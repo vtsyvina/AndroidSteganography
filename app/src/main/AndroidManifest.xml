@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.gsu.steganography">
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
     <application
+        android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidSteganography">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Encode" />
-        <activity android:name=".Decode" />
+        <activity android:name=".activity.Encode" />
+        <activity android:name=".activity.Decode" />
+        <activity android:name=".activity.SercetKeyListActivity" />
+        <activity android:name=".activity.SecretKeyEditActivity" />
+        <activity android:name=".activity.ShareKeyActivity" />
+        <activity android:name=".activity.QrCodeScanner" />
     </application>
 
 </manifest>

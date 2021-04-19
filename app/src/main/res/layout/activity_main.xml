@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <Button
         android:id="@+id/encode_button"
@@ -19,9 +19,18 @@
         android:id="@+id/decode_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/encode_button"
+        android:layout_centerHorizontal="true"
         android:layout_below="@+id/encode_button"
         android:layout_marginTop="65dp"
         android:text="@string/decode" />
+
+    <Button
+        android:id="@+id/manage_keys_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/decode_button"
+        android:layout_marginTop="65dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/manage_keys" />
 
 </RelativeLayout>

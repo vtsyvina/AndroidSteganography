@@ -1,8 +1,9 @@
 package edu.gsu.steganography.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class SecretKey {
+public class SecretKey implements Serializable {
     private String id;
     private String name;
     private String key;

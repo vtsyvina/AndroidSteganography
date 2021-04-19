@@ -15,4 +15,6 @@ public interface SecretKeyService {
     boolean updateKey(SecretKey key);
 
     boolean insertKey(SecretKey key);
+
+    boolean insertOrUpdate(SecretKey key);
 }

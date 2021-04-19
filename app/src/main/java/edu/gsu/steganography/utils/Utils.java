@@ -1,4 +1,4 @@
-package edu.gsu.steganography.Utils;
+package edu.gsu.steganography.utils;
 
 import android.graphics.Bitmap;
 import android.util.Log;

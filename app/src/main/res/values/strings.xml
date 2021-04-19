@@ -9,4 +9,13 @@
     <string name="enter_secret_key">Enter secret key</string>
     <string name="save_image">Save Image</string>
     <string name="enter_message">Enter message</string>
+    <string name="key_name">Key name</string>
+    <string name="save">Save</string>
+    <string name="edit_key">Edit key</string>
+    <string name="manage_keys">Manage Keys</string>
+    <string name="add_key">Add key</string>
+    <string name="delete">Delete</string>
+    <string name="back">Back</string>
+    <string name="filename">Filename</string>
+    <string name="filename_text">Filename -</string>
 </resources>
